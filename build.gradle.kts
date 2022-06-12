@@ -39,9 +39,5 @@ dependencies {
     })
 
     modImplementation(libs.fabric.loader)
-    modImplementation(libs.fabric.api)
-
-    modApi(libs.optional.mod.menu)
-
     modLocalRuntime(libs.runtime.lazy.dfu)
 }

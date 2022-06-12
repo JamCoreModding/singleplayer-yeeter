@@ -1,0 +1,12 @@
+{
+  "required": true,
+  "package": "io.github.jamalam360.singleplayer.yeeter.mixin",
+  "compatibilityLevel": "JAVA_16",
+  "client": [
+    "CreateWorldScreenMixin",
+    "SelectWorldScreenMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

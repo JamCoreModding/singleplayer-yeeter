@@ -1,33 +1,28 @@
 {
   "schemaVersion": 1,
-  "id": "templatemod",
+  "id": "singleplayer-yeeter",
   "version": "${version}",
-  "name": "Template Mod",
-  "description": "A Fabric mod template",
+  "name": "Singleplayer Yeeter",
+  "description": "Disable the creation of singleplayer worlds on Minecraft",
   "authors": [
     "Jamalam"
   ],
   "contact": {
-    "sources": "https://github.com/JamCoreModding/FabricTemplateMod",
-    "issues": "https://github.com/JamCoreModding/FabricTemplateMod/issues"
+    "sources": "https://github.com/Jamalam360/singplayer-yeeter",
+    "issues": "https://github.com/Jamalam360/singplayer-yeeter/issues"
   },
   "license": "MIT",
-  "icon": "assets/templatemod/icon.png",
+  "icon": "assets/singleplayer-yeeter/icon.png",
   "environment": "*",
-  "entrypoints": {
-    "main": [
-      "io.github.jamalam360.templatemod.TemplateModInit"
-    ]
-  },
+  "entrypoints": {},
   "mixins": [
-    "templatemod.mixins.json"
+    "singleplayer-yeeter.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.12.5",
-    "fabric": "*"
+    "fabricloader": ">=0.12.5"
   },
   "custom": {
-    "notify_gradle_properties_url": "https://raw.githubusercontent.com/JamCoreModding/FabricTemplateMod/main/gradle.properties",
+    "notify_gradle_properties_url": "https://raw.githubusercontent.com/Jamalam360/singplayer-yeeter/main/gradle.properties",
     "notify_gradle_properties_key": "mod_version"
   }
 }
