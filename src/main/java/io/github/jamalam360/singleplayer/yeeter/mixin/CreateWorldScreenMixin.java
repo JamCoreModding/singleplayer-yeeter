@@ -30,7 +30,7 @@ public abstract class CreateWorldScreenMixin extends Screen {
         ), this.width - 50);
 
         this.addDrawableChild(
-                new ButtonWidget(this.width / 2 - 155 + 160, this.height / 6 + 96, 150, 20, new TranslatableText("gui.toTitle"), button -> this.client.setScreen(null))
+                new ButtonWidget(this.width / 2 - 75, this.height / 6 + 96, 150, 20, new TranslatableText("gui.toTitle"), button -> this.client.setScreen(null))
         );
     }
 
