@@ -1,6 +1,6 @@
 [versions]
-minecraft = "1.19.2"
-quilt-mappings = "1.19.2+build.21"
+minecraft = "1.19.3"
+quilt-mappings = "1.19.3+build.3"
 fabric-loader = "0.14.11"
 lazy-dfu = "0.1.3"
 

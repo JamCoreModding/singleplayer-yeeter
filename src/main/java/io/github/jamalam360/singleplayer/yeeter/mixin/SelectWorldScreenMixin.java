@@ -35,6 +35,7 @@ import org.spongepowered.asm.mixin.Overwrite;
 
 @Mixin(SelectWorldScreen.class)
 public abstract class SelectWorldScreenMixin extends Screen {
+
     public MultilineText text = MultilineText.EMPTY;
 
     protected SelectWorldScreenMixin(Text text) {
@@ -48,11 +49,11 @@ public abstract class SelectWorldScreenMixin extends Screen {
     @Overwrite
     public void init() {
         this.text = MultilineText.create(this.textRenderer, Text.literal(
-                "Singleplayer worlds have been disabled in this modpack to prevent cheating via exploration of the multiplayer seed."
+              "Singleplayer worlds have been disabled in this modpack to prevent cheating via exploration of the multiplayer seed."
         ), this.width - 50);
 
         this.addDrawableChild(
-                new ButtonWidget(this.width / 2 - 75, this.height / 6 + 96, 150, 20, Text.translatable("gui.toTitle"), button -> this.client.setScreen(null))
+              ButtonWidget.builder(Text.translatable("gui.toTitle"), (b) -> this.client.setScreen(null)).size(150, 20).position(this.width / 2 - 75, this.height / 6 + 96).build()
         );
     }
 

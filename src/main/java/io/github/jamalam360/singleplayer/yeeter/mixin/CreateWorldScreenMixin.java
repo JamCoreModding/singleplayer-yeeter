@@ -25,6 +25,9 @@
 package io.github.jamalam360.singleplayer.yeeter.mixin;
 
 import net.minecraft.client.font.MultilineText;
+import net.minecraft.client.gui.Drawable;
+import net.minecraft.client.gui.Element;
+import net.minecraft.client.gui.Selectable;
 import net.minecraft.client.gui.screen.Screen;
 import net.minecraft.client.gui.screen.world.CreateWorldScreen;
 import net.minecraft.client.gui.widget.ButtonWidget;
@@ -32,9 +35,14 @@ import net.minecraft.client.util.math.MatrixStack;
 import net.minecraft.text.Text;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Shadow;
 
 @Mixin(CreateWorldScreen.class)
 public abstract class CreateWorldScreenMixin extends Screen {
+
+    @Shadow
+    protected abstract <T extends Element & Drawable & Selectable> T addDrawableChild(T drawableElement);
+
     public MultilineText text = MultilineText.EMPTY;
 
     protected CreateWorldScreenMixin(Text text) {
@@ -48,11 +56,11 @@ public abstract class CreateWorldScreenMixin extends Screen {
     @Overwrite
     public void init() {
         this.text = MultilineText.create(this.textRenderer, Text.literal(
-                "Singleplayer worlds have been disabled in this modpack to prevent cheating via exploration of the multiplayer seed."
+              "Singleplayer worlds have been disabled in this modpack to prevent cheating via exploration of the multiplayer seed."
         ), this.width - 50);
 
         this.addDrawableChild(
-                new ButtonWidget(this.width / 2 - 75, this.height / 6 + 96, 150, 20, Text.translatable("gui.toTitle"), button -> this.client.setScreen(null))
+              ButtonWidget.builder(Text.translatable("gui.toTitle"), (b) -> this.client.setScreen(null)).size(150, 20).position(this.width / 2 - 75, this.height / 6 + 96).build()
         );
     }
 
